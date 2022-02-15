@@ -1,0 +1,48 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Lista de Produtos</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Novo Produto</li>
+  </ol>
+</nav>
+
+{{#if alert}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{{/if}}
+
+<form action="/addproduto" class="row g-3 needs-validation" method="POST" novalidate>
+    <div class="col-xxl-6">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Pizza de 4 Queijos" name="nome">
+            <label for="floatingInput">Nome</label>
+        </div>
+    </div>
+    <div class="col-xxl-3">
+        <div class="form-floating">
+            <input type="number" class="form-control" id="floatingPreco" placeholder="39.5" style="width: 150px" name="preco">
+            <label for="floatingPreco">Preço</label>
+        </div>
+    </div>
+    <div class="col-xxl-3">
+        <div class="form-floating">
+            <input class="form-control" type="text" value="Bigas" aria-label="readonly input example" readonly>
+            <label>Cadastro por:</label>
+        </div>
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Detalhes" id="floatingTextarea2" style="height: 100px" maxlength="100" name="descricao"></textarea>
+        <label for="floatingTextarea2">Detalhes</label>
+    </div>
+    <div class="col-xxl-3">
+        <div class="form-floating">
+            <input class="form-control" type="text" value="Sim" aria-label="readonly input example" readonly>
+            <label>Disponível?</label>
+        </div>
+    </div>
+
+    <div class="col-12 d-gird">
+        <button class="btn btn-dark" type="submit">Adicionar</button>
+    </div>
+</form>
