@@ -1,4 +1,11 @@
 
+{{#if produtoRemovido}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Produto removido com sucesso.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{{/if}}
+
 <div class="row">
   <div class="col-6"><h1>Produtos</h1></div>
   <div class="col-6 d-flex justify-content-end">
@@ -24,9 +31,9 @@
       <td>{{this.preco}}</th>
       <td>{{this.descricao}}</th>
       <td class="text-end">
-        <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i> Detalhes</a>
-        <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i> Editar</a>
-        <a href="#" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Excluir</a>
+        <a href="/viewproduto/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i> Detalhes</a>
+        <a href="/editproduto/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i> Editar</a>
+        <a href="/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Excluir</a>
       </td>
     </tr>
     {{/each}}
