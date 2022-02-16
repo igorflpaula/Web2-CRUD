@@ -22,7 +22,7 @@ exports.view = (req,res) => {
             console.log(err);
         }
 
-        console.log('Conteúdo da tabela Produtos:\n', rows);
+        
     });
     
 
@@ -41,7 +41,7 @@ exports.find = (req,res) => {
             console.log(err);
         }
 
-        console.log('Conteúdo da tabela Produtos:\n', rows);
+        
     });
 };    
 
@@ -51,9 +51,9 @@ exports.form = (req,res) => {
 }
 
 exports.create = (req,res) => {
-    const { nome, preco, descricao} = req.body;
+    const { nome, preco, descricao, id_usuario, situacao} = req.body;
 
-    connection.query('INSERT INTO produtos SET nome = ?, preco = ?, descricao = ?, id_usuario = 1, situacao = "ativo"',[nome, preco, descricao], (err,rows) => {
+    connection.query('INSERT INTO produtos SET nome = ?, preco = ?, descricao = ?, id_usuario = ?, situacao = ?',[nome, preco, descricao,id_usuario, situacao], (err,rows) => {
 
         if(!err){
             res.render('addproduto', { alert: 'Produto adicionado com sucesso!'});
@@ -62,7 +62,7 @@ exports.create = (req,res) => {
             console.log(err);
         }
 
-        console.log('Conteúdo da tabela Produtos:\n', rows);
+        
     });
 };
 
@@ -78,7 +78,7 @@ exports.edit = (req,res) => {
             console.log(err);
         }
 
-        console.log('Conteúdo da tabela Produtos:\n', rows);
+        
     });
 };
 
@@ -98,15 +98,13 @@ exports.update = (req,res) => {
                 else{
                     console.log(err);
                 }
-        
-                console.log('Conteúdo da tabela Produtos:\n', rows);
+                
             });
         }
         else{
             console.log(err);
         }
 
-        console.log('Conteúdo da tabela Produtos:\n', rows);
     });
 };
 
@@ -123,7 +121,7 @@ exports.delete = (req,res) => {
     //         console.log(err);
     //     }
 
-    //     console.log('Conteúdo da tabela Produtos:\n', rows);
+        
     // });
 
     connection.query('UPDATE produtos SET situacao = ? WHERE id = ?',['esgotado', req.params.id], (err,rows) => {
@@ -137,7 +135,7 @@ exports.delete = (req,res) => {
             console.log(err);
         }
 
-        console.log('Conteúdo da tabela Produtos:\n', rows);
+        
     });
 };
 
@@ -150,7 +148,7 @@ exports.viewall = (req, res) => {
       } else {
         console.log(err);
       }
-      console.log('Conteúdo da tabela Produtos: \n', rows);
+      
     });
   
-  }
+};

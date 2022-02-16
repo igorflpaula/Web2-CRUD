@@ -1,3 +1,6 @@
+// DESENVOLVIDO POR
+// GABRIEL PAES, IGOR FRANCISCO, JOÃO PEDRO E VICTOR WESTIM
+
 const express = require('express');
 const expressHandlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
@@ -37,9 +40,7 @@ app.set('view engine', '.hbs');
 //     console.log('Connected as ID ' + connection.threadId);
 // });
 
-// 1:39:00 https://www.youtube.com/watch?v=1aXZQcG2Y6I
 
-// Rotas
 // app.get('/', (req,res) =>{
 //     res.render('home');
 // });
